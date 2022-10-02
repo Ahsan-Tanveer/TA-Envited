@@ -1,14 +1,15 @@
-import { ThemeProvider } from '@mui/material';
-import Button from './components/Button';
-import { H1 } from './components/Typography';
-import { theme } from './theme';
+import { Route, Routes } from "react-router-dom";
+import CreatePage from "./pages/CreatePage";
+import EventPage from "./pages/EventPage";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <H1 variant="h1" color={'primary.light'}>Welcome</H1>
-      <Button variant="contained" disableElevation>Text</Button>
-    </ThemeProvider>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/create" element={<CreatePage />} />
+      <Route path="/event" element={<EventPage />} />
+    </Routes>
   )
 }
 
